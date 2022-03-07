@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.chip.Chip
 import ru.gb.cousrematerialdesign.R
 import ru.gb.cousrematerialdesign.databinding.FragmentChipsBinding
 import ru.gb.cousrematerialdesign.databinding.FragmentMainBinding
@@ -42,6 +43,12 @@ class ChipsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
+            binding.chipGroup.findViewById<Chip>(checkedId)?.let {
+                Toast.makeText(requireContext(),"chip $checkedId ${it.text}",Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
 
     }
 

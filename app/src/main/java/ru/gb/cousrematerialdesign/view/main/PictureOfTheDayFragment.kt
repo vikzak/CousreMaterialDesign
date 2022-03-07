@@ -16,6 +16,8 @@ import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import ru.gb.cousrematerialdesign.R
 import ru.gb.cousrematerialdesign.databinding.FragmentMainBinding
+import ru.gb.cousrematerialdesign.utils.showSnackBar
+import ru.gb.cousrematerialdesign.utils.showToastMessageText
 import ru.gb.cousrematerialdesign.view.MainActivity
 import ru.gb.cousrematerialdesign.view.chips.ChipsFragment
 import ru.gb.cousrematerialdesign.viewmodel.PictureOfTheDayDataState
@@ -52,17 +54,15 @@ class PictureOfTheDayFragment : Fragment() {
         viewModel.getLiveData().observe(viewLifecycleOwner, Observer { renderData(it) })
         viewModel.sendServerRequest()
 
-        setHasOptionsMenu(true)
-        (requireActivity() as MainActivity).setSupportActionBar(binding.bottomAppBar)
-
-        //
         showBottomMenu() //добавляем меню
+
         viewModel.getLiveData().observe(viewLifecycleOwner, Observer { renderData(it) })
         setEndIconOnClickListener() // вынес отдельно
         viewModel.sendServerRequest()
 
         bottomSheetBehavior = BottomSheetBehavior.from(binding.includedBSL.bottomSheetContainer)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
+        //bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+        //bottomSheetBehavior.isHideable = false
         bottomSheetBehavior.addBottomSheetCallback(object :
             BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
@@ -80,7 +80,7 @@ class PictureOfTheDayFragment : Fragment() {
                 Log.d("logCMD", "slideOffset: $slideOffset")
             }
         })
-
+        var isMain:Boolean = true
         binding.fab.setOnClickListener {
             if (isMain){
                 binding.bottomAppBar.navigationIcon = null
@@ -97,7 +97,7 @@ class PictureOfTheDayFragment : Fragment() {
         }
     }
 
-    var isMain:Boolean = true
+
 
     private fun showBottomMenu() {
         setHasOptionsMenu(true)
@@ -115,11 +115,16 @@ class PictureOfTheDayFragment : Fragment() {
 
     private fun renderData(pictureOfTheDayDataState: PictureOfTheDayDataState) {
         when (pictureOfTheDayDataState) {
-            is PictureOfTheDayDataState.Error -> {
-                //HW
+            is PictureOfTheDayDataState.Error -> {//функция описана в utisl->AppDialog
+                binding.main.showSnackBar(
+                    fragment = this,
+                    text = R.string.error,
+                    actionText = R.string.reload,
+                    { viewModel.sendServerRequest() }
+                )
             }
-            is PictureOfTheDayDataState.Loading -> {
-                //HW
+            is PictureOfTheDayDataState.Loading -> {//функция описана в utisl->AppDialog
+                binding.main.showToastMessageText("LOADING...",requireContext())
             }
             is PictureOfTheDayDataState.Success -> {
                 binding.imageView.load(pictureOfTheDayDataState.serverResponseData.hdurl)
@@ -139,9 +144,11 @@ class PictureOfTheDayFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            //R.id.app_bar_fav -> toastMessageText("app_bar_fav")
-            R.id.app_bar_fav -> Toast.makeText(requireContext(), "app_bar_fav", Toast.LENGTH_SHORT)
-                .show()
+            R.id.app_bar_fav -> {
+                showDescriptionPictureOfDayResum() // если скрыли описание картинки дня свайпом,
+                // покажем его еще раз
+                binding.main.showToastMessageText("app_bar_fav",requireContext())
+            }
             R.id.app_bar_setting -> {
                 requireActivity()
                     .supportFragmentManager
@@ -149,18 +156,22 @@ class PictureOfTheDayFragment : Fragment() {
                     .replace(R.id.container,ChipsFragment.newInstance())
                     .addToBackStack("")
                     .commit()
-
+                binding.main.showToastMessageText("app_bar_setting",requireContext())
             }
             android.R.id.home -> {
                 BottomNavigationDrawerFragment().show(requireActivity().supportFragmentManager, "")
+                binding.main.showToastMessageText("home",requireContext())
             }
         }
         return super.onOptionsItemSelected(item)
     }
 
 
-    fun toastMessageText(message: String) {
-        Toast.makeText(requireContext(), message, Toast.LENGTH_SHORT).show()
+    fun showDescriptionPictureOfDayResum(){
+        bottomSheetBehavior = BottomSheetBehavior.from(binding.includedBSL.bottomSheetContainer)
+        if (bottomSheetBehavior.state == BottomSheetBehavior.STATE_HIDDEN){
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+        }
     }
 
     override fun onDestroy() {
