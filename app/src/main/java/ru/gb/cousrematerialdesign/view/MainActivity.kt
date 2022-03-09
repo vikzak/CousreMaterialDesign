@@ -8,7 +8,7 @@ import ru.gb.cousrematerialdesign.view.main.PictureOfTheDayFragment
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTheme(R.style.MyIndigo)
+        setTheme(R.style.MyBaseTheme)
         setContentView(R.layout.activity_main)
         if (savedInstanceState == null){
             supportFragmentManager
