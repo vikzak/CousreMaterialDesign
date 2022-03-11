@@ -59,15 +59,15 @@ class ChipsFragment : Fragment(), View.OnClickListener {
                 Toast.makeText(requireContext(),"chip $checkedId ${it.text}",Toast.LENGTH_SHORT)
                     .show()
                 if (checkedId == 1){
-                    parrentActivity.setCurrentTheme(ThemeGreen)
+                    parrentActivity.setCurrentTheme(ThemeIndigo)
                     parrentActivity.recreate()
                 }
                 if (checkedId == 2){
-                    parrentActivity.setCurrentTheme(ThemeOrange)
+                    parrentActivity.setCurrentTheme(ThemeGreen)
                     parrentActivity.recreate()
                 }
                 if (checkedId == 3){
-                    parrentActivity.setCurrentTheme(ThemeIndigo)
+                    parrentActivity.setCurrentTheme(ThemeOrange)
                     parrentActivity.recreate()
                 }
             }
