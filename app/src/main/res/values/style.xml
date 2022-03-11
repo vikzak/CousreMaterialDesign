@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="myButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">?superColor_500</item>
+        <item name="rippleColor">?superColor_900</item>
+    </style>
+
+    <style name="myFloatingActionButtonStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">?superColor_800</item>
+    </style>
+
+    <style name="myBottomAppBarnStyle" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="backgroundTint">?superColor_900</item>
+    </style>
+
+    <style name="myChipStyle" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="backgroundTint">?superColor_100</item>
+    </style>
+
+</resources>

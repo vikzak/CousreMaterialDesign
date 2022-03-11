@@ -7,8 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-<!-- gray color -->
+    <!-- gray color -->
     <color name="color_gray">#242424</color>
+
 
     <color name="red_100">#FBC7CC</color>
     <color name="red_200">#FB4844</color>
@@ -67,6 +68,17 @@
     <color name="orange_700">#F57C00</color>
     <color name="orange_800">#EF6C00</color>
     <color name="orange_900">#E65100</color>
+
+    <!-- super color Base Theme -->
+    <color name="myBaseTheme_100">#B3E5FC</color>
+    <color name="myBaseTheme_200">#81D4FA</color>
+    <color name="myBaseTheme_300">#4FC3F7</color>
+    <color name="myBaseTheme_400">#29B6F6</color>
+    <color name="myBaseTheme_500">#03A9F4</color>
+    <color name="myBaseTheme_600">#039BE5</color>
+    <color name="myBaseTheme_700">#0288D1</color>
+    <color name="myBaseTheme_800">#0277BD</color>
+    <color name="myBaseTheme_900">#01579B</color>
 <!-- брал тут: https://materialui.co/colors/indigo -->
 
 
