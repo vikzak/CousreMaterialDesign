@@ -19,6 +19,7 @@
         <!--        <item name="floatingActionButtonStyle">@style/myFloatingActionButtonStyle</item>-->
         <item name="materialButtonStyle">@style/myButtonStyle</item>
         <item name="bottomAppBarStyle">@style/myBottomAppBarnStyle</item>
+        <item name="chipStyle">@style/myChipStyle</item>
     </style>
 
 

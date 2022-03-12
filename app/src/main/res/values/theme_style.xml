@@ -12,6 +12,9 @@
         <item name="superColor_700">@color/indigo_700</item>
         <item name="superColor_800">@color/indigo_800</item>
         <item name="superColor_900">@color/indigo_900</item>
+        <item name="materialButtonStyle">@style/AppButton</item>
+        <item name="shapeAppearanceSmallComponent">@style/AppShapeAppearance.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/AppShapeAppearance.MediumComponent</item>
     </style>
 
 

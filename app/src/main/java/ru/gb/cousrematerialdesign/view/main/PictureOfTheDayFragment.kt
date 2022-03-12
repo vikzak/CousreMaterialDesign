@@ -151,7 +151,7 @@ class PictureOfTheDayFragment : Fragment() {
                 )
             }
             is PictureOfTheDayDataState.Loading -> {//функция описана в utisl->AppDialog
-                binding.main.showToastMessageText("LOADING...",requireContext())
+                //binding.main.showToastMessageText("LOADING...",requireContext())
             }
             is PictureOfTheDayDataState.Success -> {
                 binding.imageView.load(pictureOfTheDayDataState.serverResponseData.hdurl)
