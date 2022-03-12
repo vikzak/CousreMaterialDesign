@@ -21,6 +21,7 @@ class PictureOfTheDayViewModel(
 
     fun sendServerRequest(){
         liveData.postValue(PictureOfTheDayDataState.Loading(null))
+        liveData.value = PictureOfTheDayDataState.Loading(0)
         pictureOfTheDayRRI
             .getRetrofitImlp()
             .getPictureOfTheDay(BuildConfig.NASA_API_KEY)
@@ -50,4 +51,36 @@ class PictureOfTheDayViewModel(
             )
 
     }
+    
+    fun sendServerRequest(date:String){
+        liveData.value = PictureOfTheDayDataState.Loading(0)
+        val apiKey: String = BuildConfig.NASA_API_KEY
+        if (apiKey.isBlank()){
+            //
+            liveData.value = PictureOfTheDayDataState.Error(Throwable("wrong key"))
+        } else {
+            pictureOfTheDayRRI.getRetrofitImlp().getPictureOfTheDay(apiKey).enqueue(callback)
+        }
+
+    }
+
+    private val callback = object : Callback<PictureOfTheDayResponceData>{
+        override fun onResponse(
+            call: Call<PictureOfTheDayResponceData>,
+            response: Response<PictureOfTheDayResponceData>
+        ) {
+            if (response.isSuccessful&&response.body()!=null){
+                liveData.value = PictureOfTheDayDataState.Success(response.body()!!)
+            } else {
+                liveData.value = PictureOfTheDayDataState.Error(IllegalStateException("Error"))
+            }
+        }
+
+        override fun onFailure(call: Call<PictureOfTheDayResponceData>, t: Throwable) {
+            liveData.value = PictureOfTheDayDataState.Error(IllegalStateException("On Failture"))
+        }
+    }
+
 }
+
+
