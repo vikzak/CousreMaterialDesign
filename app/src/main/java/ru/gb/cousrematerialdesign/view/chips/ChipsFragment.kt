@@ -58,19 +58,20 @@ class ChipsFragment : Fragment(), View.OnClickListener {
             binding.chipGroup.findViewById<Chip>(checkedId)?.let {
                 Toast.makeText(requireContext(),"chip $checkedId ${it.text}",Toast.LENGTH_SHORT)
                     .show()
-                if (checkedId == 1){
-                    parrentActivity.setCurrentTheme(ThemeIndigo)
-                    parrentActivity.recreate()
-                }
-                if (checkedId == 2){
-                    parrentActivity.setCurrentTheme(ThemeGreen)
-                    parrentActivity.recreate()
-                }
-                if (checkedId == 3){
-                    parrentActivity.setCurrentTheme(ThemeOrange)
-                    parrentActivity.recreate()
-                }
             }
+        }
+
+        binding.chipSelectIndigoTheme.setOnClickListener {
+            parrentActivity.setCurrentTheme(ThemeIndigo)
+            parrentActivity.recreate()
+        }
+        binding.chipSelectGreenTheme.setOnClickListener {
+            parrentActivity.setCurrentTheme(ThemeGreen)
+            parrentActivity.recreate()
+        }
+        binding.chipSelectOrangeTheme.setOnClickListener {
+            parrentActivity.setCurrentTheme(ThemeOrange)
+            parrentActivity.recreate()
         }
 
         binding.selectBnW.setOnClickListener {
@@ -80,60 +81,9 @@ class ChipsFragment : Fragment(), View.OnClickListener {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
             }
         }
-
-
-        binding.chipGroupSelectTheme.setOnCheckedChangeListener { group, checkedId ->
-            binding.chipGroupSelectTheme.findViewById<Chip>(checkedId)?.let {
-                Toast.makeText(requireContext(),"chip $checkedId ${it.text}",Toast.LENGTH_SHORT)
-                    .show()
-                if (checkedId == 1){
-                    parrentActivity.setCurrentTheme(ThemeGreen)
-                    parrentActivity.recreate()
-                }
-                if (checkedId == 2){
-                    parrentActivity.setCurrentTheme(ThemeOrange)
-                    parrentActivity.recreate()
-                }
-                if (checkedId == 3){
-                    parrentActivity.setCurrentTheme(ThemeIndigo)
-                    parrentActivity.recreate()
-                }
-            }
-        }
-
-
-
-
-//        when (parrentActivity.getCurrentTheme()){
-////            1 -> binding.chipGroup.findViewById<Chip>.isChecked = true
-//
-//        }
-
-
     }
 
 
-    override fun onClick(p0: View?) {
-        binding.chipGroupSelectTheme.setOnCheckedChangeListener { group, checkedId ->
-            binding.chipGroupSelectTheme.findViewById<Chip>(checkedId)?.let {
-//                when(checkedId){
-//                    1-> {
-//                        parrentActivity.setCurrentTheme(ThemeGreen)
-//                        parrentActivity.recreate()
-//                    }
-//                    2-> {
-//                        parrentActivity.setCurrentTheme(ThemeOrange)
-//                        parrentActivity.recreate()
-//                    }
-//                    3-> {
-//                        parrentActivity.setCurrentTheme(ThemeIndigo)
-//                        parrentActivity.recreate()
-//                    }
-//                }
-            }
-        }
-
-    }
 
     override fun onDestroy() {
         super.onDestroy()

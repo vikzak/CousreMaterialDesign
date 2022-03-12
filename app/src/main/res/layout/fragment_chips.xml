@@ -74,6 +74,7 @@
         app:singleSelection="true">
 
         <com.google.android.material.chip.Chip
+            android:id="@+id/chipSelectIndigoTheme"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             app:chipBackgroundColor="@color/indigo_200"
             android:layout_width="wrap_content"
@@ -81,6 +82,7 @@
             android:text="@string/theme_indigo" />
 
         <com.google.android.material.chip.Chip
+            android:id="@+id/chipSelectGreenTheme"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             app:chipBackgroundColor="@color/green_200"
             android:layout_width="wrap_content"
@@ -88,6 +90,7 @@
             android:text="@string/theme_green" />
 
         <com.google.android.material.chip.Chip
+            android:id="@+id/chipSelectOrangeTheme"
             style="@style/Widget.MaterialComponents.Chip.Choice"
             app:chipBackgroundColor="@color/orange_200"
             android:layout_width="wrap_content"
