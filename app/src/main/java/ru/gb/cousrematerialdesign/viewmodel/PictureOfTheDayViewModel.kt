@@ -59,7 +59,7 @@ class PictureOfTheDayViewModel(
             //
             liveData.value = PictureOfTheDayDataState.Error(Throwable("wrong key"))
         } else {
-            pictureOfTheDayRRI.getRetrofitImlp().getPictureOfTheDay(apiKey).enqueue(callback)
+            pictureOfTheDayRRI.getRetrofitImlp().getPictureOfTheDay(apiKey,date).enqueue(callback)
         }
 
     }

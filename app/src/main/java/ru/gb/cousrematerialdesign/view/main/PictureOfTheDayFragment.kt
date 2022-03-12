@@ -1,6 +1,9 @@
 package ru.gb.cousrematerialdesign.view.main
 
 import android.content.Intent
+import android.icu.text.SimpleDateFormat
+import android.icu.util.Calendar
+import android.icu.util.TimeZone
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
@@ -14,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.google.android.material.bottomappbar.BottomAppBar
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.chip.Chip
 import ru.gb.cousrematerialdesign.R
 import ru.gb.cousrematerialdesign.databinding.FragmentMainBinding
 import ru.gb.cousrematerialdesign.utils.showSnackBar
@@ -22,6 +26,7 @@ import ru.gb.cousrematerialdesign.view.MainActivity
 import ru.gb.cousrematerialdesign.view.chips.ChipsFragment
 import ru.gb.cousrematerialdesign.viewmodel.PictureOfTheDayDataState
 import ru.gb.cousrematerialdesign.viewmodel.PictureOfTheDayViewModel
+import java.util.*
 
 class PictureOfTheDayFragment : Fragment() {
     private var _binding: FragmentMainBinding? = null
@@ -61,8 +66,6 @@ class PictureOfTheDayFragment : Fragment() {
         viewModel.sendServerRequest()
 
         bottomSheetBehavior = BottomSheetBehavior.from(binding.includedBSL.bottomSheetContainer)
-        //bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
-        //bottomSheetBehavior.isHideable = false
         bottomSheetBehavior.addBottomSheetCallback(object :
             BottomSheetBehavior.BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
@@ -95,6 +98,30 @@ class PictureOfTheDayFragment : Fragment() {
             }
             isMain = !isMain
         }
+
+        binding.chipGroupPicture.setOnCheckedChangeListener { group, checkedId ->
+            binding.chipGroupPicture.findViewById<Chip>(checkedId)?.let {
+                when (checkedId){
+                    R.id.todayChipPicture -> {
+                        viewModel.sendServerRequest(takeDate(0))
+                    }
+                    R.id.yesterdayChipPicture -> {
+                        viewModel.sendServerRequest(takeDate(-1))
+                    }
+                    R.id.beforeYesterdayChipPicture -> {
+                        viewModel.sendServerRequest(takeDate(-2))
+                    }
+                }
+            }
+        }
+    }
+
+    private fun takeDate(count: Int): String {
+        val currentDate = Calendar.getInstance()
+        currentDate.add(Calendar.DAY_OF_MONTH, count)
+        val format1 = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        format1.timeZone = TimeZone.getTimeZone("EST",0)
+        return format1.format(currentDate.time)
     }
 
 
@@ -147,7 +174,7 @@ class PictureOfTheDayFragment : Fragment() {
             R.id.app_bar_fav -> {
                 showDescriptionPictureOfDayResum() // если скрыли описание картинки дня свайпом,
                 // покажем его еще раз
-                binding.main.showToastMessageText("app_bar_fav",requireContext())
+                //binding.main.showToastMessageText("app_bar_fav",requireContext())
             }
             R.id.app_bar_setting -> {
                 requireActivity()
@@ -156,11 +183,11 @@ class PictureOfTheDayFragment : Fragment() {
                     .replace(R.id.container,ChipsFragment.newInstance())
                     .addToBackStack("")
                     .commit()
-                binding.main.showToastMessageText("app_bar_setting",requireContext())
+                //binding.main.showToastMessageText("app_bar_setting",requireContext())
             }
             android.R.id.home -> {
                 BottomNavigationDrawerFragment().show(requireActivity().supportFragmentManager, "")
-                binding.main.showToastMessageText("home",requireContext())
+                //binding.main.showToastMessageText("home",requireContext())
             }
         }
         return super.onOptionsItemSelected(item)

@@ -67,7 +67,6 @@ class ChipsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.chipGroup.setOnCheckedChangeListener { group, checkedId ->
             binding.chipGroup.findViewById<Chip>(checkedId)?.let {
-                //Toast.makeText(requireContext(),"chip $checkedId ${it.text}",Toast.LENGTH_SHORT).show()
                 when (checkedId){
 //                    R.id.todayChip -> Toast.makeText(requireContext(),"today",Toast.LENGTH_SHORT).show()
 //                    R.id.yesterdayChip -> Toast.makeText(requireContext(),"yesterday",Toast.LENGTH_SHORT).show()
