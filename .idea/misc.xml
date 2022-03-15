@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/bg_earth.xml" value="0.1525" />
         <entry key="app/src/main/res/drawable/ic_earth.xml" value="0.1285" />
         <entry key="app/src/main/res/drawable/swipe_indicator_active.xml" value="0.1525" />
         <entry key="app/src/main/res/drawable/swipe_indicator_passive.xml" value="0.1525" />
@@ -10,6 +11,9 @@
         <entry key="app/src/main/res/font/fon.xml" value="0.2794871794871795" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.23958333333333334" />
         <entry key="app/src/main/res/layout/activity_navigation.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/activity_navigation_custom_tab_earth.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/activity_navigation_custom_tab_mars.xml" value="0.25364583333333335" />
+        <entry key="app/src/main/res/layout/activity_navigation_custom_tab_system.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/bottom_navigation_layout.xml" value="0.25364583333333335" />
         <entry key="app/src/main/res/layout/bottom_sheet_layout.xml" value="0.335" />
         <entry key="app/src/main/res/layout/fragment_chips.xml" value="0.25364583333333335" />

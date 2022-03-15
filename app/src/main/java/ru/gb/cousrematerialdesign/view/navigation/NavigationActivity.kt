@@ -20,5 +20,13 @@ class NavigationActivity : AppCompatActivity(){
         setContentView(binding.root)
 
         binding.viewPager.adapter = ViewPagerAdapter(supportFragmentManager)
+        binding.tableLayot.setupWithViewPager(binding.viewPager)
+
+//        binding.tableLayot.getTabAt(EARTH_KEY)?.setIcon(R.drawable.ic_earth)
+//        binding.tableLayot.getTabAt(MARS_KEY)?.setIcon(R.drawable.ic_mars)
+//        binding.tableLayot.getTabAt(SYSTEM_KEY)?.setIcon(R.drawable.ic_system)
+        binding.tableLayot.getTabAt(EARTH_KEY)?.setCustomView(R.layout.activity_navigation_custom_tab_earth)
+        binding.tableLayot.getTabAt(MARS_KEY)?.setCustomView(R.layout.activity_navigation_custom_tab_mars)
+        binding.tableLayot.getTabAt(SYSTEM_KEY)?.setCustomView(R.layout.activity_navigation_custom_tab_system)
     }
 }
