@@ -3,12 +3,13 @@ package ru.gb.cousrematerialdesign.view.navigation
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import ru.gb.cousrematerialdesign.databinding.FragmentEarthBinding
 import ru.gb.cousrematerialdesign.databinding.FragmentMainBinding
 
 class EarthFragment : Fragment() {
 
-    private var _binding: FragmentMainBinding? = null
-    private val binding: FragmentMainBinding
+    private var _binding: FragmentEarthBinding? = null
+    private val binding: FragmentEarthBinding
         get() = _binding!!
 
 
@@ -17,7 +18,7 @@ class EarthFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
+        _binding = FragmentEarthBinding.inflate(inflater, container, false)
         return binding.root
     }
 

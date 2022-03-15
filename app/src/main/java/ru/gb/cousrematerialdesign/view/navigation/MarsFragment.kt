@@ -20,6 +20,7 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.chip.Chip
 import ru.gb.cousrematerialdesign.R
 import ru.gb.cousrematerialdesign.databinding.FragmentMainBinding
+import ru.gb.cousrematerialdesign.databinding.FragmentMarsBinding
 import ru.gb.cousrematerialdesign.utils.showSnackBar
 import ru.gb.cousrematerialdesign.utils.showToastMessageText
 import ru.gb.cousrematerialdesign.view.MainActivity
@@ -30,8 +31,8 @@ import java.util.*
 
 class MarsFragment : Fragment() {
 
-    private var _binding: FragmentMainBinding? = null
-    private val binding: FragmentMainBinding
+    private var _binding: FragmentMarsBinding? = null
+    private val binding: FragmentMarsBinding
         get() = _binding!!
 
 
@@ -40,7 +41,7 @@ class MarsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentMainBinding.inflate(inflater, container, false)
+        _binding = FragmentMarsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
