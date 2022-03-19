@@ -3,8 +3,10 @@ package ru.gb.cousrematerialdesign.view.navigation
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import ru.gb.cousrematerialdesign.databinding.FragmentEarthBinding
 import ru.gb.cousrematerialdesign.databinding.FragmentMainBinding
+import ru.gb.cousrematerialdesign.viewmodel.PictureOfTheDayViewModel
 
 class EarthFragment : Fragment() {
 
@@ -22,6 +24,15 @@ class EarthFragment : Fragment() {
         return binding.root
     }
 
+
+//    private val viewModel: PictureOfTheDayViewModel by lazy {
+//        ViewModelProvider(this).get(PictureOfTheDayViewModel::class.java)
+//    }
+
+//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//        super.onViewCreated(view, savedInstanceState)
+//        viewModel.sendServerRequest()
+//    }
 
     override fun onDestroy() {
         super.onDestroy()

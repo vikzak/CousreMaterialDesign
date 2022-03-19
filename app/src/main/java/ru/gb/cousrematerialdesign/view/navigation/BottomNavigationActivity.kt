@@ -12,7 +12,7 @@ import ru.gb.cousrematerialdesign.databinding.BottomSheetLayoutBinding
 import ru.gb.cousrematerialdesign.view.main.PictureOfTheDayFragment
 
 
-class BottomNavigationActivity : AppCompatActivity(){
+class  BottomNavigationActivity : AppCompatActivity(){
 
     private lateinit var binding: ActivityBottomNavigationBinding
 
