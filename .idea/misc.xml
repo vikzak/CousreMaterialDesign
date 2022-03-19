@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/drawable/bg_earth.xml" value="0.1525" />
         <entry key="app/src/main/res/drawable/ic_earth.xml" value="0.1285" />
+        <entry key="app/src/main/res/drawable/progress_animation.xml" value="0.1515" />
         <entry key="app/src/main/res/drawable/swipe_indicator_active.xml" value="0.1525" />
         <entry key="app/src/main/res/drawable/swipe_indicator_passive.xml" value="0.1525" />
         <entry key="app/src/main/res/font/alatsi.xml" value="0.14791666666666667" />
