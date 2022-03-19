@@ -11,4 +11,11 @@
     <string name="imageDesc">Картинка</string>
     <string name="error">Ошибка</string>
     <string name="reload">Повторить</string>
+    <string name="theme_indigo">MyIndigo</string>
+    <string name="theme_green">MyGreen</string>
+    <string name="theme_orange">MyOrange</string>
+    <string name="earth">Earth</string>
+    <string name="mars">Mars</string>
+    <string name="weather">Weather</string>
+    <string name="system">System</string>
 </resources>

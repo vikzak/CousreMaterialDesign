@@ -3,7 +3,6 @@ package ru.gb.cousrematerialdesign.utils
 import android.content.Context
 import android.view.View
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
 

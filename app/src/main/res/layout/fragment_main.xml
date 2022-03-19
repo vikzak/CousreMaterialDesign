@@ -34,6 +34,36 @@
                 android:inputType="text" />
         </com.google.android.material.textfield.TextInputLayout>
 
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupPicture"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/todayChipPicture"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Сегодня" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/yesterdayChipPicture"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Вчера" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/beforeYesterdayChipPicture"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Позавчера" />
+
+        </com.google.android.material.chip.ChipGroup>
+
         <ru.gb.cousrematerialdesign.utils.EquilateralImageView
             android:id="@+id/image_view"
             android:layout_width="match_parent"
