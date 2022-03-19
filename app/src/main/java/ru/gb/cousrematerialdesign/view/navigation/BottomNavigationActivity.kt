@@ -1,5 +1,6 @@
 package ru.gb.cousrematerialdesign.view.navigation
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -10,9 +11,11 @@ import ru.gb.cousrematerialdesign.databinding.ActivityMainBinding
 import ru.gb.cousrematerialdesign.databinding.ActivityNavigationBinding
 import ru.gb.cousrematerialdesign.databinding.BottomSheetLayoutBinding
 import ru.gb.cousrematerialdesign.view.main.PictureOfTheDayFragment
+import ru.gb.cousrematerialdesign.viewmodel.PictureOfTheDayViewModel
 
 
 class  BottomNavigationActivity : AppCompatActivity(){
+
 
     private lateinit var binding: ActivityBottomNavigationBinding
 
