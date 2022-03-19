@@ -61,7 +61,7 @@ class PictureOfTheDayFragment : Fragment() {
 
         showBottomMenu() //добавляем меню
 
-        viewModel.getLiveData().observe(viewLifecycleOwner, Observer { renderData(it) })
+        //viewModel.getLiveData().observe(viewLifecycleOwner, Observer { renderData(it) })
         setEndIconOnClickListener() // вынес отдельно
         viewModel.sendServerRequest()
 
