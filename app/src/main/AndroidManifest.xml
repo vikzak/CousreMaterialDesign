@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="ru.gb.cousrematerialdesign">
     
     <uses-permission android:name="android.permission.INTERNET"/>
@@ -28,6 +29,10 @@
         </activity>
         <activity android:name=".view.navigation.BottomNavigationActivity"
             android:exported="true">
+        </activity>
+        <activity android:name=".view.constaint.LayoutActivity"
+            android:exported="true"
+            tools:ignore="DuplicateActivity">
         </activity>
     </application>
 
