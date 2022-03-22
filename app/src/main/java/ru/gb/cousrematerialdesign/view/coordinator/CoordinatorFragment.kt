@@ -1,4 +1,4 @@
-package ru.gb.cousrematerialdesign.view.constaint
+package ru.gb.cousrematerialdesign.view.coordinator
 
 import android.os.Bundle
 import android.view.*
@@ -7,19 +7,16 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import coil.load
 import ru.gb.cousrematerialdesign.R
-import ru.gb.cousrematerialdesign.databinding.FragmentChipsBinding
-import ru.gb.cousrematerialdesign.databinding.FragmentConstraintBinding
-import ru.gb.cousrematerialdesign.databinding.FragmentEarthBinding
-import ru.gb.cousrematerialdesign.databinding.FragmentMainBinding
+import ru.gb.cousrematerialdesign.databinding.*
 import ru.gb.cousrematerialdesign.utils.showSnackBar
 import ru.gb.cousrematerialdesign.utils.showToastMessageText
 import ru.gb.cousrematerialdesign.viewmodel.PictureOfTheDayDataState
 import ru.gb.cousrematerialdesign.viewmodel.PictureOfTheDayViewModel
 
-class ConstraintFragment : Fragment() {
+class CoordinatorFragment : Fragment() {
 
-    private var _binding: FragmentConstraintBinding? = null
-    private val binding: FragmentConstraintBinding
+    private var _binding: FragmentCoordinatorBinding? = null
+    private val binding: FragmentCoordinatorBinding
         get() = _binding!!
 
 
@@ -28,13 +25,12 @@ class ConstraintFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentConstraintBinding.inflate(inflater, container, false)
+        _binding = FragmentCoordinatorBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.groupOneTest.visibility = View.GONE
     }
     override fun onDestroy() {
         super.onDestroy()
@@ -43,7 +39,7 @@ class ConstraintFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = ConstraintFragment()
+        fun newInstance() = CoordinatorFragment()
     }
 
 }

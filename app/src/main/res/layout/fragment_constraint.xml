@@ -5,15 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/groupOneTest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="materialButton,materialButton2"/>
+
     <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier1"
+        android:id="@+id/barrierOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="end"
         app:constraint_referenced_ids="materialButton,materialButton2"/>
 
     <androidx.constraintlayout.widget.Barrier
-        android:id="@+id/barrier2"
+        android:id="@+id/barrierTwo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="bottom"
@@ -60,8 +66,8 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/barrier1"
-        app:layout_constraintTop_toTopOf="@id/barrier2"
+        app:layout_constraintStart_toStartOf="@id/barrierOne"
+        app:layout_constraintTop_toTopOf="@id/barrierTwo"
         app:layout_constraintWidth_percent="0.25"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

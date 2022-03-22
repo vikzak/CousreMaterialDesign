@@ -7,6 +7,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import ru.gb.cousrematerialdesign.R
 import ru.gb.cousrematerialdesign.databinding.*
+import ru.gb.cousrematerialdesign.view.coordinator.CoordinatorFragment
 import ru.gb.cousrematerialdesign.view.main.PictureOfTheDayFragment
 import ru.gb.cousrematerialdesign.viewmodel.PictureOfTheDayViewModel
 
@@ -35,7 +36,8 @@ class  LayoutActivity : AppCompatActivity(){
                     navigationTo(ConstraintFragment())
                     true
                 }
-                R.id.bottom_constraint -> {
+                R.id.bottom_coordinator -> {
+                    navigationTo(CoordinatorFragment())
                     true
                 }
                 R.id.bottom_motion -> {
@@ -44,7 +46,7 @@ class  LayoutActivity : AppCompatActivity(){
                 else -> false
             }
         }
-        binding.bottomNavigationView.selectedItemId = R.id.bottom_constraint
+        binding.bottomNavigationView.selectedItemId = R.id.bottom_coordinator
     }
 
     private fun navigationTo(f: Fragment) {
