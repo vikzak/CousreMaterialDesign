@@ -2,6 +2,7 @@ package ru.gb.cousrematerialdesign.view.coordinator
 
 import android.os.Bundle
 import android.view.*
+import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -31,6 +32,8 @@ class CoordinatorFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val behavior = BottomBehavior(requireContext())
+        (binding.myMButton.layoutParams as CoordinatorLayout.LayoutParams).behavior = behavior
     }
     override fun onDestroy() {
         super.onDestroy()

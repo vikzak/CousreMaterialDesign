@@ -37,16 +37,19 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior=".view.coordinator.NestedBehavior">
+        app:layout_behavior="ru.gb.cousrematerialdesign.view.coordinator.NestedBehavior">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
             android:text="@string/large_text" />
 
     </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/myMButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -56,6 +59,7 @@
         android:textColor="@color/white"
         android:textSize="50sp"
         app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom|end" />
+        app:layout_anchorGravity="bottom|end"
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

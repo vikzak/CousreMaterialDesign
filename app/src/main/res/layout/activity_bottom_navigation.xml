@@ -19,6 +19,7 @@
         android:visibility="visible"
         app:labelVisibilityMode="selected"
         android:layout_gravity="bottom"
+
         app:menu="@menu/menu_bottom_navigation_view"/>
 
 
