@@ -1,15 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <Transition
-        app:constraintSetEnd="@layout/fragment_motion_end"
-        app:constraintSetStart="@layout/fragment_motion_start">
-        <OnClick app:targetId="@+id/materialButtonOne"></OnClick>
-    </Transition>
+    <ConstraintSet android:id="@+id/startMotion">
+        <Constraint
+            android:id="@+id/materialButtonOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="One"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/materialButtonTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Two"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
 
-    <Transition
-        app:constraintSetEnd="@layout/fragment_motion_start"
-        app:constraintSetStart="@layout/fragment_motion_end">
-        <OnClick app:targetId="@+id/materialButtonTwo"></OnClick>
-    </Transition>
+    <ConstraintSet android:id="@+id/endMotion">
+        <Constraint
+            android:id="@+id/materialButtonOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="One"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.75"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@+id/materialButtonTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Two"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.15"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+<!--    второй способ через явное указание анимации объектов-->
+        <Transition
+            app:constraintSetEnd="@+id/endMotion"
+            app:constraintSetStart="@+id/startMotion">
+            <OnClick app:targetId="@+id/materialButtonOne"></OnClick>
+        </Transition>
+
+        <Transition
+            app:constraintSetEnd="@+id/startMotion"
+            app:constraintSetStart="@+id/endMotion">
+            <OnClick app:targetId="@+id/materialButtonTwo"></OnClick>
+        </Transition>
+
+<!--    первый способ-->
+    <!--    <Transition-->
+    <!--        app:constraintSetEnd="@layout/fragment_motion_end"-->
+    <!--        app:constraintSetStart="@layout/fragment_motion_start">-->
+    <!--        <OnClick app:targetId="@+id/materialButtonOne"></OnClick>-->
+    <!--    </Transition>-->
+
+    <!--    <Transition-->
+    <!--        app:constraintSetEnd="@layout/fragment_motion_start"-->
+    <!--        app:constraintSetStart="@layout/fragment_motion_end">-->
+    <!--        <OnClick app:targetId="@+id/materialButtonTwo"></OnClick>-->
+    <!--    </Transition>-->
 </MotionScene>
