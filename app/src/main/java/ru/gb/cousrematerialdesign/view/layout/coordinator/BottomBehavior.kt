@@ -1,11 +1,13 @@
-package ru.gb.cousrematerialdesign.view.coordinator
+package ru.gb.cousrematerialdesign.view.layout.coordinator
 
 import android.content.Context
 import android.util.AttributeSet
 import android.view.View
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import com.google.android.material.appbar.AppBarLayout
+import ru.gb.cousrematerialdesign.R
 import kotlin.math.abs
+
 
 class BottomBehavior(context: Context, attributeSet: AttributeSet?=null) :
     CoordinatorLayout.Behavior<View>(context, attributeSet) {

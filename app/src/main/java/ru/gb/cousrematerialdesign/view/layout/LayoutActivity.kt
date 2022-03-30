@@ -1,15 +1,12 @@
-package ru.gb.cousrematerialdesign.view.constaint
+package ru.gb.cousrematerialdesign.view.layout
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import ru.gb.cousrematerialdesign.R
-import ru.gb.cousrematerialdesign.databinding.*
-import ru.gb.cousrematerialdesign.view.coordinator.CoordinatorFragment
-import ru.gb.cousrematerialdesign.view.main.PictureOfTheDayFragment
-import ru.gb.cousrematerialdesign.viewmodel.PictureOfTheDayViewModel
+import ru.gb.cousrematerialdesign.databinding.ActivityLayoutBinding
+import ru.gb.cousrematerialdesign.view.layout.constaint.ConstraintFragment
+import ru.gb.cousrematerialdesign.view.layout.coordinator.CoordinatorFragment
 
 
 class  LayoutActivity : AppCompatActivity(){

@@ -5,12 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import ru.gb.cousrematerialdesign.R
 import ru.gb.cousrematerialdesign.databinding.BottomNavigationLayoutBinding
-import ru.gb.cousrematerialdesign.databinding.FragmentMainBinding
-import ru.gb.cousrematerialdesign.view.constaint.LayoutActivity
+import ru.gb.cousrematerialdesign.view.layout.LayoutActivity
 import ru.gb.cousrematerialdesign.view.navigation.BottomNavigationActivity
 import ru.gb.cousrematerialdesign.view.navigation.NavigationActivity
 
@@ -40,7 +38,7 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
                     startActivity(Intent(requireContext(),BottomNavigationActivity::class.java))
                 }
                 R.id.navigation_three ->{
-                    startActivity(Intent(requireContext(),LayoutActivity::class.java))
+                    startActivity(Intent(requireContext(), LayoutActivity::class.java))
                 }
             }
             true

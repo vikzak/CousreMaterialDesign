@@ -1,18 +1,13 @@
-package ru.gb.cousrematerialdesign.view.coordinator
+package ru.gb.cousrematerialdesign.view.layout.coordinator
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import coil.load
-import ru.gb.cousrematerialdesign.R
-import ru.gb.cousrematerialdesign.databinding.*
-import ru.gb.cousrematerialdesign.utils.showSnackBar
-import ru.gb.cousrematerialdesign.utils.showToastMessageText
-import ru.gb.cousrematerialdesign.viewmodel.PictureOfTheDayDataState
-import ru.gb.cousrematerialdesign.viewmodel.PictureOfTheDayViewModel
+import ru.gb.cousrematerialdesign.databinding.FragmentCoordinatorBinding
+
 
 class CoordinatorFragment : Fragment() {
 
