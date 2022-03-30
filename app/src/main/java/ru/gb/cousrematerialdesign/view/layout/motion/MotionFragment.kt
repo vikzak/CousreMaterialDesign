@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import ru.gb.cousrematerialdesign.databinding.FragmentConstraintBinding
+import ru.gb.cousrematerialdesign.databinding.FragmentMainBinding
+import ru.gb.cousrematerialdesign.databinding.FragmentMotionStartBinding
 
 
 class MotionFragment : Fragment() {
 
-    private var _binding: FragmentConstraintBinding? = null
-    private val binding: FragmentConstraintBinding
+    private var _binding: FragmentMotionStartBinding? = null
+    private val binding: FragmentMotionStartBinding
         get() = _binding!!
 
 
@@ -20,13 +22,12 @@ class MotionFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentConstraintBinding.inflate(inflater, container, false)
+        _binding = FragmentMotionStartBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.groupOneTest.visibility = View.GONE
     }
     override fun onDestroy() {
         super.onDestroy()

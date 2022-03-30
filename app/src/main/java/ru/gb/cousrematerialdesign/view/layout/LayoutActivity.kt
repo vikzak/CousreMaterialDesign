@@ -7,6 +7,7 @@ import ru.gb.cousrematerialdesign.R
 import ru.gb.cousrematerialdesign.databinding.ActivityLayoutBinding
 import ru.gb.cousrematerialdesign.view.layout.constaint.ConstraintFragment
 import ru.gb.cousrematerialdesign.view.layout.coordinator.CoordinatorFragment
+import ru.gb.cousrematerialdesign.view.layout.motion.MotionFragment
 
 
 class  LayoutActivity : AppCompatActivity(){
@@ -38,6 +39,7 @@ class  LayoutActivity : AppCompatActivity(){
                     true
                 }
                 R.id.bottom_motion -> {
+                    navigationTo(MotionFragment())
                     true
                 }
                 else -> false
