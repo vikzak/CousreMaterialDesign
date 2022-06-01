@@ -34,14 +34,16 @@ class PictureOfTheDayViewModel(
                             response.body()?.let {
                                 liveData.postValue(PictureOfTheDayDataState.Success(it))
                             }
-
                         } else {
-                            //HW
+                            if (response.message().isNullOrEmpty())
+                                liveData.value = PictureOfTheDayDataState.Error(Throwable("Unidentified error"))
+                            else
+                                liveData.value = PictureOfTheDayDataState.Error(Throwable(response.message()))
                         }
                     }
 
                     override fun onFailure(call: Call<PictureOfTheDayResponceData>, t: Throwable) {
-                        TODO("Not yet implemented")
+                        liveData.value = PictureOfTheDayDataState.Error(t)
                     }
                 }
 
