@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="myButtonStyle" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">?superColor_500</item>
+        <item name="rippleColor">?superColor_900</item>
+    </style>
+
+    <style name="myFloatingActionButtonStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">?superColor_800</item>
+    </style>
+
+    <style name="myBottomAppBarnStyle" parent="Widget.MaterialComponents.BottomAppBar">
+        <item name="backgroundTint">?superColor_900</item>
+    </style>
+
+    <style name="myChipStyle" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="backgroundTint">?superColor_100</item>
+    </style>
+
+    <style name="myHeader" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textSize">22sp</item>
+    </style>
+
+    <style name="myDescriptions" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="android:textSize">18sp</item>
+    </style>
+
+    <style name="mySmallComponentStyle" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerSize">10dp</item>
+        <item name="cornerFamily">cut</item>
+    </style>
+
+    <style name="myChipStyleShape" parent="Widget.MaterialComponents.Chip.Entry">
+        <item name="shapeAppearanceOverlay">@style/mySmallComponentStyle</item>
+    </style>
+
+    <style name="AppButton" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">?attr/colorSecondary</item>
+    </style>
+
+    <style name="AppShapeAppearance.SmallComponent"
+        parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+    <style name="AppShapeAppearance.MediumComponent"
+        parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">8dp</item>
+    </style>
+</resources>

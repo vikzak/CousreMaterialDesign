@@ -22,4 +22,5 @@ class BottomNavigationDrawerFragment : BottomSheetDialogFragment() {
         _binding = BottomNavigationLayoutBinding.inflate(inflater,container,false)
         return binding.root
     }
+
 }
